@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Time Off Request Form</title>
+     <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h3 class="mb-3">Time Off Requests</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Request Start</th>
+                    <th>Request End</th>
+                    <th>Approval</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for request in time_off_requests %}
+                    <tr>
+                        <td>{{ request.employee_id }}</td>
+                        <td>{{ request.first_name }}</td>
+                        <td>{{ request.last_name }}</td>
+                        <td>{{ request.request_start }}</td>
+                        <td>{{ request.request_end }}</td>
+                        <td>{{ request.approval }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
  <h2>Time Off Request Form</h2>
     <form method="post">
         {% csrf_token %}
