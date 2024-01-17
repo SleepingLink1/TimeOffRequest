@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
 </head>
 <body>
+    <h2>Welcome to the Home Page</h2>
+    <p>You are logged in as {{ user.username }}.</p>
 
-</body>
+    <h3>Time Off Requests</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Request Start</th>
+                <th>Request End</th>
+                <th>Approval</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in time_off_requests %}
+                <tr>
+                    <td>{{ request.employee_id }}</td>
+                    <td>{{ request.first_name }}</td>
+                    <td>{{ request.last_name }}</td>
+                    <td>{{ request.request_start }}</td>
+                    <td>{{ request.request_end }}</td>
+                    <td>{{ request.approval }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+<!-- Button to redirect to TimeOffRequestForm -->
+    <a href="{% url 'time_off_request' %}"><button>Submit Time Off Request</button></a></body>
 </html>
