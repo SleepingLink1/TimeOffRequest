@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-#TODO: update URLs to include home, form, and view request page
+from .views import TimeOffRequestView
+
+# TODO: update URLs to include home, form, and view request page
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('time-off-request/', TimeOffRequestView.as_view(), name='time_off_request'),
 ]
