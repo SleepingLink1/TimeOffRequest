@@ -16,10 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import TimeOffRequestView
+from .views import TimeOffRequestView, HomeView
+from .views.accountLogin import EmployeeRegistrationView, CustomLoginView
 
 # TODO: update URLs to include home, form, and view request page
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', HomeView.as_view(), name='home'),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('register/', EmployeeRegistrationView.as_view(), name='register'),
     path('time-off-request/', TimeOffRequestView.as_view(), name='time_off_request'),
 ]
