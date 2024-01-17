@@ -9,4 +9,5 @@ class TimeOffRequestModel(models.Model):
     last_name = models.CharField(max_length=30)
     request_start = models.DateTimeField(null=False)
     request_end = models.DateTimeField(null=False)
-    approval = bool(null=True)
+    reason = models.CharField(max_length=1000, blank=True, null=True)
+    approval = models.NullBooleanField(null=True)
