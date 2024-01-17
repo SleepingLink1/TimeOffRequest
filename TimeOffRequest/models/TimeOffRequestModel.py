@@ -10,4 +10,4 @@ class TimeOffRequestModel(models.Model):
     request_start = models.DateTimeField(null=False)
     request_end = models.DateTimeField(null=False)
     reason = models.CharField(max_length=1000, blank=True, null=True)
-    approval = bool(null=True)
+    approval = models.NullBooleanField(null=True)
