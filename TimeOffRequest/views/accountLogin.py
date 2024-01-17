@@ -1,7 +1,8 @@
 from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from .forms import EmployeeProfileForm
+from TimeOffRequest.forms import EmployeeProfileForm
+from TimeOffRequest.models import Employee
 
 class CustomLoginView(LoginView):
     template_name = 'accounts/login.html'
