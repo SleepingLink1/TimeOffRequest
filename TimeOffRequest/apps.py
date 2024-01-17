@@ -6,3 +6,7 @@ class AccountsConfig(AppConfig):
 
     def ready(self):
         import signals
+
+class TimeOffRequestConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'TimeOffRequest'
