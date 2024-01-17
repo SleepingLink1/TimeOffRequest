@@ -22,4 +22,8 @@ from .views import TimeOffRequestView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('time-off-request/', TimeOffRequestView.as_view(), name='time_off_request'),
+    #add path for home page
+    path('', HomeView.as_view(), name='home'),
+    #add path for view request page
+    path('view-request/', TimeOffRequestView.as_view(), name='view_request'),
 ]
