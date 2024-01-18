@@ -1,9 +1,12 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import Employee
-from .models.TimeOffRequestModel import TimeOffRequestModel
+from .models.time_off_request_model import TimeOffRequestModel
 
 
+class LoginForm(forms.Form):
+    employee_id = forms.CharField(label='Employee ID', max_length=100)
+    password = forms.CharField(label='Password', widget=forms.PasswordInput())
 class TimeOffRequestForm(forms.ModelForm):
     class Meta:
         model = TimeOffRequestModel

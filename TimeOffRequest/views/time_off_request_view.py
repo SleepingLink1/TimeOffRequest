@@ -1,6 +1,6 @@
 from django.views.generic import CreateView
 from TimeOffRequest.forms import TimeOffRequestForm
-from TimeOffRequest.models import TimeOffRequestModel
+from TimeOffRequest.models import time_off_request_model
 
 
 class TimeOffRequestView(CreateView):
